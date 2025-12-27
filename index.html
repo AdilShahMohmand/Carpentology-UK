@@ -1,545 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craftsman Carpentry | Premium Carpentry Services in the UK</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflareogui.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wtd@600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Carpentology UK | Premium Carpentry Services in the UK</title>
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css " />
+    <link href=" https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap " rel="stylesheet" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #c19a6b;
-            --primary-dark: #a07a55;
-            --dark: #2d2d2d;
-            --light: #f8f5f0;
-            --gray: #8a8a8a;
-            --white: #ffffff;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            color: var(--primary-dark);
-            margin: 0;
-        }
-
-        .logo i {
-            color: var(--primary);
-            font-size: 2.2rem;
-            margin-right: 12px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .phone-number {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .phone-number:hover {
-            color: var(--primary);
-        }
-
-        .phone-number i {
-            margin-right: 10px;
-            color: var(--primary);
-        }
-
-        .tagline {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-top: 5px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            margin-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            color: var(--primary-dark);
-            position: relative;
-        }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .service-content {
-            padding: 25px;
-        }
-
-        .service-content h3 {
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            color: var(--primary-dark);
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-        }
-
-        .about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            height: 400px;
-            background: url('https://images.unsplash.com/photo-1553991259-26dd9a427618?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info-box h3 {
-            color: var(--primary-dark);
-            margin-bottom: 25px;
-        }
-
-        .contact-item {
-            display: flex;
-            margin-bottom: 25px;
-        }
-
-        .contact-item i {
-            font-size: 1.4rem;
-            color: var(--primary);
-            min-width: 40px;
-        }
-
-        .contact-details {
-            padding-left: 15px;
-        }
-
-        .contact-details h4 {
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 40px 0 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo h2 {
-            color: var(--white);
-            margin-bottom: 15px;
-        }
-
-        .footer-contact p {
-            margin-bottom: 10px;
-        }
-
-        .footer-contact a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .phone-number {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .contact-info {
-                align-items: center;
-            }
-            
-            .hero {
-                margin-top: 120px;
-            }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#c19a6b;--primary-dark:#a07a55;--dark:#2d2d2d;--light:#f8f5f0;--gray:#8a8a8a;--white:#fff;--shadow:0 4px 12px rgba(0,0,0,.1);--whatsapp:#25d366}
+        body{font-family:Montserrat,sans-serif;color:var(--dark);background:var(--light);line-height:1.6;overflow-x:hidden}
+        h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;margin-bottom:1rem}
+        .container{width:90%;max-width:1200px;margin:0 auto;padding:0 15px}
+        header{background:var(--white);box-shadow:var(--shadow);position:fixed;width:100%;top:0;z-index:1000;padding:10px 0}
+        .header-container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+        .logo{display:flex;align-items:center;gap:10px}
+        .logo h1{font-size:1.5rem;color:var(--primary-dark);margin:0;white-space:nowrap}
+        .logo i{color:var(--primary);font-size:1.8rem}
+        .contact-info{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+        .contact-link{font-size:1rem;font-weight:600;color:var(--primary-dark);text-decoration:none;display:flex;align-items:center;transition:color .3s}
+        .contact-link:hover{color:var(--primary)}
+        .contact-link i{margin-right:8px;font-size:1.1rem}
+        .whatsapp-link i{color:var(--whatsapp)}
+        .tagline{font-size:.8rem;color:var(--gray);text-align:right;max-width:220px}
+        .hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(https://images.unsplash.com/photo-1595526114035-0d45ed14c44e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80);background-size:cover;background-position:center;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);margin-top:80px;padding:0 20px}
+        .hero-content{max-width:800px}
+        .hero h2{font-size:2.5rem;margin-bottom:1rem;text-shadow:0 2px 4px rgba(0,0,0,.5)}
+        .hero p{font-size:1.1rem;margin-bottom:1.5rem;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+        .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--primary);color:var(--white);padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .3s;border:2px solid var(--primary);min-height:44px;min-width:180px}
+        .btn:hover{background:0 0;color:var(--primary);transform:translateY(-3px);box-shadow:0 6px 15px rgba(0,0,0,.2)}
+        .btn i{margin-right:8px}
+        .services{padding:70px 0 80px;background:var(--white)}
+        .section-title{text-align:center;margin-bottom:50px;color:var(--primary-dark);font-size:2.2rem;position:relative}
+        .section-title:after{content:'';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:70px;height:4px;background:var(--primary)}
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+        .service-card{background:var(--light);padding:25px;border-radius:10px;box-shadow:var(--shadow);text-align:center;transition:transform .3s}
+        .service-card:hover{transform:translateY(-6px)}
+        .service-card i{font-size:2.2rem;color:var(--primary);margin-bottom:18px}
+        .service-card h3{font-size:1.35rem;margin-bottom:12px;color:var(--primary-dark)}
+        .service-card p{color:var(--gray);font-size:.95rem}
+        @media (min-width:768px){.hero h2{font-size:3.2rem}.hero p{font-size:1.3rem}.btn{font-size:1.1rem;padding:14px 32px}.section-title{font-size:2.6rem}.logo h1{font-size:1.8rem}.contact-link{font-size:1.15rem}.tagline{font-size:.9rem}}
+        @media (min-width:1024px){.hero h2{font-size:3.5rem}.hero p{font-size:1.4rem}}
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <i class="fas fa-tools"></i>
-                <h1>Craftsman Carpentry</h1>
+                <i class="fas fa-hammer"></i>
+                <h1>Carpentology UK</h1>
             </div>
             <div class="contact-info">
-                <a href="tel:+447304328999" class="phone-number">
-                    <i class="fas fa-phone"></i> +44 7304 328999
+                <a href="https://wa.me/447304328999" target="_blank" class="contact-link whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> +44 7304 328999
                 </a>
-                <div class="tagline">Premium Carpentry Services Across the UK</div>
+                <a href="mailto:carpentologyuk@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> carpentologyuk@gmail.com
+                </a>
+                <div class="tagline">The Science & Art of Fine Carpentry</div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h2>Masterful Carpentry & Woodworking</h2>
-            <p>Bespoke solutions for your home and business. Quality craftsmanship with decades of experience.</p>
-            <a href="#contact" class="btn">Get Free Quote</a>
+            <h2>Precision Woodcraft, Built to Last</h2>
+            <p>Premium bespoke carpentry services across the UK — from custom kitchens to hand-finished furniture.</p>
+            <a href="https://wa.me/447304328999" target="_blank" class="btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1600585154084-4e5fe738aa50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Kitchen Installations</h3>
-                        <p>Custom kitchen cabinets, countertops, and fittings designed for both beauty and functionality.</p>
-                    </div>
+                    <i class="fas fa-couch"></i>
+                    <h3>Bespoke Furniture</h3>
+                    <p>Tailor-made tables, shelves, and cabinets crafted from sustainable hardwoods.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1598928636135-d14601d293c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Bespoke Furniture</h3>
-                        <p>Handcrafted tables, chairs, shelves and storage solutions tailored to your exact specifications.</p>
-                    </div>
+                    <i class="fas fa-home"></i>
+                    <h3>Custom Kitchens</h3>
+                    <p>Elegant, functional kitchens designed and built to your exact specifications.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1617048217369-747862d9a855?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Home Renovations</h3>
-                        <p>Skirting boards, architraves, staircases, and other renovations to enhance your living space.</p>
-                    </div>
+                    <i class="fas fa-door-open"></i>
+                    <h3>Interior Joinery</h3>
+                    <p>Doors, staircases, panelling, and built-in storage with flawless finishes.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Our Craft</h2>
-                    <p>With over 20 years of experience in the carpentry trade, Craftsman Carpentry brings unparalleled skill and attention to detail to every project we undertake across the United Kingdom.</p>
-                    <p>We believe in using only the finest sustainable materials and combining traditional techniques with modern innovations to deliver furniture and installations that stand the test of time.</p>
-                    <p>Whether you're looking for a complete kitchen remodel, custom furniture pieces, or intricate woodwork installations, our team is dedicated to bringing your vision to life with precision and care.</p>
-                    <a href="#contact" class="btn">Contact Us Today</a>
-                </div>
-                <div class="about-image"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info-box">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p><a href="tel:+447304328999">+44 7304 328999</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>info@craftsmancarpentry.co.uk</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="contact-details">
-                            <h4>Service Area</h4>
-                            <p>Greater London and surrounding counties</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div class="contact-details">
-                            <h4>Working Hours</h4>
-                            <p>Monday-Friday: 8am-6pm<br>Saturday: 9am-4pm</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="tel" placeholder="Your Phone Number">
-                        <textarea placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>Craftsman Carpentry</h2>
-                    <p>Premium carpentry services with a commitment to quality, craftsmanship, and customer satisfaction across the UK.</p>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+447304328999">+44 7304 328999</a></p>
-                    <p><i class="fas fa-envelope"></i> info@craftsmancarpentry.co.uk</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Serving Greater London & Home Counties</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Craftsman Carpentry. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form submission handling
-        const contactForm = document.querySelector('.contact-form form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! We will contact you shortly.');
-                this.reset();
-            });
-        }
-    </script>
 </body>
 </html>
